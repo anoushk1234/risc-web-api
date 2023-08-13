@@ -8,10 +8,17 @@ use risc0_zkvm::{
     serde::{from_slice, to_vec},
     ExecutorEnv,
 };
+use reqwest;
 
 fn main() {
+    let binance_spot: Vec<BinanceSpot> = reqwest::get("https://api.binance.us/api/v3/ticker/price")
+        .await
+        .unwrap()
+        .json()
+        .await
+        .unwrap();
     // First, we construct an executor environment
-    let env = ExecutorEnv::builder().build().unwrap();
+    let env = ExecutorEnv::builder().add_input(&binance_spot).build().unwrap();
     let prover = default_prover();
     // TODO: add guest input to the executor environment using
     // ExecutorEnvBuilder::add_input().

@@ -7,9 +7,12 @@ edition = "2021"
 [workspace]
 
 [dependencies]
-reqwest = { version = "0.11", features = ["json"] }
+# reqwest = { version = "0.11", features = ["json"] }
+# hyper = { version = "0.14.27", features = ["full"] }
 # If you want to try (experimental) std support, add `features = [ "std" ]` to risc0-zkvm
 risc0-zkvm = { version = "0.16.1", default-features = false }
 serde = "1.0.183"
 serde_json = "1.0.104"
-tokio = { version = "1", features = ["full"] }
+# tokio = { version = "1.30.0", features = ["full"] }
+# http-body-util = "0.1.0-rc.3"
+# hyper-util = { git = "https://github.com/hyperium/hyper-util.git" }

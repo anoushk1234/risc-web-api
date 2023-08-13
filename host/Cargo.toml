@@ -7,3 +7,4 @@ edition = "2021"
 methods = { path = "../methods" }
 risc0-zkvm = { version = "0.16.1" }
 serde = "1.0"
+reqwest = { version = "0.11", features = ["json"] }
